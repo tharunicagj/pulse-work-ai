@@ -1,54 +1,40 @@
-import React from 'react'
 
-import {
-    LayoutDashboard,
-    Home,
-    Users,
-    FileText,
-    Settings
-} from 'lucide-react'
+import React from 'react'
 
 function Sidebar() {
 
-    const menuItems = [
-        { name: "Dashboard", icon: LayoutDashboard },
-        { name: "Properties", icon: Home },
-        { name: "Tenants", icon: Users },
-        { name: "Rental Agreements", icon: FileText },
-        { name: "Settings", icon: Settings }
-    ]
-
     return (
+        <div className="min-h-screen w-56 bg-gray-800 p-5 text-white">
 
-        <aside className="hidden min-h-screen w-64 shrink-0 bg-slate-900 p-5 text-white md:block">
-
-            <h2 className="mb-8 text-xl font-bold">
-                Management
+            <h2 className="mb-6 text-xl font-bold">
+                Menu
             </h2>
 
-            {menuItems.map((item) => {
+            <ul className="space-y-4">
 
-                const Icon = item.icon
+                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
+                    Dashboard
+                </li>
 
-                return (
+                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
+                    Properties
+                </li>
 
-                    <div
-                        key={item.name}
-                        className="mb-3 flex cursor-pointer items-center gap-3 rounded-lg p-3 hover:bg-slate-700"
-                    >
+                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
+                    Tenants
+                </li>
 
-                        <Icon size={20} />
+                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
+                    Rental Agreements
+                </li>
 
-                        <span>{item.name}</span>
+                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
+                    Settings
+                </li>
 
-                    </div>
+            </ul>
 
-                )
-
-            })}
-
-        </aside>
-
+        </div>
     )
 }
 

@@ -1,21 +1,10 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import Dashboard from './pages/Dashboard'
 import Footer from './components/Footer'
 
-import Dashboard from './pages/Dashboard'
-import Login from './pages/Login'
-
 function App() {
-
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-    if (!isLoggedIn) {
-        return (
-            <Login onLoginSuccess={() => setIsLoggedIn(true)} />
-        )
-    }
 
     return (
         <div className="min-h-screen bg-gray-100">
@@ -34,8 +23,6 @@ function App() {
 }
 
 export default App
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 function PropertyCard({ name, location, price, type, status }) {
@@ -22,14 +23,14 @@ function PropertyCard({ name, location, price, type, status }) {
             </div>
 
             <p className="mb-2 text-gray-600">
-                📍 {location}
+                Location: {location}
             </p>
 
             <p className="mb-2 text-gray-600">
-                Property Type: {type}
+                Type: {type}
             </p>
 
-            <p className="text-lg font-bold text-gray-800">
+            <p className="text-lg font-bold">
                 ₹{price} / month
             </p>
 
