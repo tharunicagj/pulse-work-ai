@@ -1,30 +1,29 @@
-import React from 'react'
+
+    import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
+  return (
+    <nav className="bg-blue-500 text-2xl p-4 text-white">
 
-    return (
-        <nav className="flex items-center justify-between bg-white p-4 shadow">
+      <h1 className="text-xl font-bold">RentEasy - Property Rental Management</h1>
 
-            <h1 className="text-2xl font-bold text-blue-600">
-                RentEasy
-            </h1>
+      <h1 className="text-xl font-bold">Welcome to the New Owner</h1>
 
-            <div className="flex items-center gap-4">
+      <Link to="/" className="mt-3 p-4">DashBoard</Link>
 
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    className="w-32 rounded-lg border p-2 sm:w-48"
-                />
+      <Link to="/about" className="mt-3 p-4">About</Link>
 
-                <button className="rounded-lg bg-blue-600 px-4 py-2 text-white">
-                    Admin
-                </button>
+      <Link to="/properties" className="mt-3 p-4">Properties</Link>
 
-            </div>
+      <Link to="/add-property" className="mt-3 p-4">Add Property</Link>
 
-        </nav>
-    )
+      <Link to="/tenants" className="mt-3 p-4">Tenants</Link>
+
+      <Link to="/setting" className="mt-3 p-4">Settings</Link>
+
+    </nav>
+  )
 }
 
 export default Navbar

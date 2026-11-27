@@ -1,41 +1,22 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Sidebar() {
+const Sidebar = () => {
 
-    return (
-        <div className="min-h-screen w-56 bg-gray-800 p-5 text-white">
+  return (
+    <div className="w-58 h-100 bg-gray-200 p-5 flex flex-col">
+      <h2 className="font-bold">Menu</h2>
 
-            <h2 className="mb-6 text-xl font-bold">
-                Menu
-            </h2>
+      <Link to="/" className="mt-3">Dashboard</Link>
+      <Link to="/about" className="mt-3">About</Link>
+      <Link to="/properties" className="mt-3">Properties</Link>
+      <Link to="/add-property" className="mt-3">Add Property</Link>
+      <Link to="/tenants" className="mt-3">Tenants</Link>
+      <Link to="/setting" className="mt-3">Settings</Link>
 
-            <ul className="space-y-4">
-
-                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
-                    Dashboard
-                </li>
-
-                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
-                    Properties
-                </li>
-
-                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
-                    Tenants
-                </li>
-
-                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
-                    Rental Agreements
-                </li>
-
-                <li className="cursor-pointer rounded-lg p-3 hover:bg-gray-700">
-                    Settings
-                </li>
-
-            </ul>
-
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Sidebar

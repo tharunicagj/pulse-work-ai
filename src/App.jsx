@@ -1,31 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
-import Dashboard from './pages/Dashboard'
 import Footer from './components/Footer'
 
-function App() {
+import DashBoard from './pages/DashBoard'
+import About from './components/About'
+import Properties from './components/Properties'
+import AddProperty from './components/AddProperty'
+import Tenants from './components/Tenants'
+import Setting from './components/Settings'
 
-    return (
-        <div className="min-h-screen bg-gray-100">
+import { Routes, Route } from 'react-router-dom'
 
-            <Navbar />
+const App = () => {
 
-            <div className="flex">
-                <Sidebar />
-                <Dashboard />
-            </div>
+  const [properties, setProperties] = useState([])
 
-            <Footer />
+  const addProperty = (data) => {
+    setProperties([...properties, data])
+  }
 
-        </div>
-    )
+  return (
+    <>
+      <Navbar />
+
+      <div className="flex">
+        <Sidebar />
+
+        <Routes>
+          <Route path="/" element={<DashBoard />} />
+
+          <Route path="/about" element={<About />} />
+
+          <Route
+            path="/properties"
+            element={<Properties properties={properties} />}
+          />
+
+          <Route
+            path="/add-property"
+            element={<AddProperty addOn={addProperty} />}
+          />
+
+          <Route path="/tenants" element={<Tenants />} />
+
+          <Route path="/setting" element={<Setting />} />
+        </Routes>
+
+      </div>
+
+      <Footer />
+    </>
+  )
 }
 
 export default App
-
-
-
 /*import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
